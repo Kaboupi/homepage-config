@@ -25,8 +25,11 @@ $(VENV)/.infrastructure_done: gen/requirements.txt
 	@echo "=> Finish"
 
 run: venv
+	@echo "=> Start docker containers"
+	docker compose up -d
 	@echo "=> Start config gen"
-	@$(VENV_PYTHON) gen/main.py
+	$(VENV_PYTHON) gen/main.py
+	@echo "=> Success!"
 
 clean:
 	@echo "=> Start venv cleanup"

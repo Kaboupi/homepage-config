@@ -22,11 +22,11 @@
     - IT-Tools:
         icon: it-tools.svg
         description: Most used IT-Tools
-        href: http://{{ HOMELAB_ADDRESS }}:{{ ITTOOLS_PORT }}/
-        siteMonitor: http://{{ HOMELAB_ADDRESS }}:{{ ITTOOLS_PORT }}/
+        href: http://{{ HOMELAB_ADDRESS }}:{{ IT_TOOLS_PORT }}/
+        siteMonitor: http://{{ HOMELAB_ADDRESS }}:{{ IT_TOOLS_PORT }}/
         server: {{ DOCKER_NAME }}
         showStats: true
-        container: {{ ITTOOLS_NAME }}
+        container: {{ IT_TOOLS_NAME }}
 
     - Grafana:
         icon: grafana.svg
@@ -53,6 +53,15 @@
           url: https://{{ HOMELAB_ADDRESS }}:{{ PORTAINER_PORT_API }}
           env: {{ PORTAINER_ENV }}
           key: {{ PORTAINER_KEY }}
+
+    - Homepage:
+        icon: homepage
+        description: Homepage on local server
+        href: http://{{ HOMELAB_ADDRESS }}:{{ HOMEPAGE_PORT }}/
+        siteMonitor: http://{{ HOMELAB_ADDRESS }}:{{ HOMEPAGE_PORT }}/
+        showStats: true
+        server: {{ DOCKER_NAME }}
+        container: {{ HOMEPAGE_NAME }}
 
     # - Tailscale:
     #     icon: tailscale.svg
