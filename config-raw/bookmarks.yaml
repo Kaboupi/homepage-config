@@ -1,7 +1,4 @@
 ---
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/bookmarks
-
 - AI:
 
   - ChatGPT:
@@ -21,24 +18,24 @@
 
   - SYNTX:
     - abbr: STX
-      icon: syntx.csv
+      icon: syntx.svg
       href: https://syntx.ai/
 
-- Работа:
+- Work:
 
   - Gmail:
     - abbr: GML
       icon: gmail.svg
       href: https://gmail.com/
 
-- Развлечения:
+- Entertainment:
 
   - YouTube:
     - abbr: YT
       icon: youtube.svg
       href: https://youtube.com/
 
-  - Яндекс.Музыка:
-    - abbr: ЯМ
+  - Yandex Music:
+    - abbr: YM
       icon: https://yastatic.net/s3/doc-binary/src/mediaservices/yandex_music_icon_ru_whitebg.svg
       href: https://music.yandex.ru/

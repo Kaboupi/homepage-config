@@ -1,7 +1,4 @@
 ---
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/info-widgets/
-
 # - greeting:
 #     text_size: xl
 #     text: Welcome
@@ -30,8 +27,10 @@
       hourCycle: h23
 
 - openmeteo:
-    label: Current
+    label: {{ LOCATION_NAME }}
     latitude: {{ LOCATION_LATITUDE }}
     longitude: {{ LOCATION_LONGITUDE }}
+    timezone: {{ TIMEZONE }}
+    units: metric
     cache: 5
 

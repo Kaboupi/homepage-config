@@ -1,27 +1,24 @@
 ---
-# For configuration options and examples, please see:
-# https://gethomepage.dev/configs/services/
-
-- Виджеты:
-    - Календарь:
+- Widgets:
+    - Calendar:
         widget:
           type: calendar
           firstDayInWeek: monday
           view: monthly
           showTime: true
-          timezone: Europe/Moscow
+          timezone: {{ TIMEZONE }}
 
-- Локальные сервисы:
+- Local services:
 
     - VERT.sh:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/vert.svg
         href: http://{{ HOMELAB_ADDRESS }}:3333/
-        description: Конвертация файлов
+        description: File convert
 
     - Grafana:
         icon: grafana.svg
         href: http://{{ HOMELAB_ADDRESS }}:3000/
-        description: Grafana на локальном сервере
+        description: Grafana on local server
         widget:
           type: grafana
           url: http://{{ HOMELAB_ADDRESS }}:3000
@@ -31,7 +28,7 @@
     - Portainer:
         icon: portainer.svg
         href: http://{{ HOMELAB_ADDRESS }}:9000/
-        description: Portainer на локальном сервере
+        description: Portainer on local server
         widget:
           type: portainer
           url: https://{{ HOMELAB_ADDRESS }}:9443
@@ -40,20 +37,20 @@
 
     - Tailscale:
         icon: tailscale.svg
-        href: https://remote.routerich.ru/devices
-        description: Управление Tailscale подключениями
+        href: {{ TAILSCALE_HREF }}
+        description: Managing Tailscale connections
         # widget:
         #   type: tailscale
-        #   address: https://remote.routerich.ru/
-        #   deviceid: routerich
+        #   address: {{ TAILSCALE_API }}
+        #   deviceid: deviceid
         #   key: {{ TAILSCALE_KEY }}
 
-- Дизайн:
+- Design:
     - VERT.sh:
         href: http://{{ HOMELAB_ADDRESS }}:3333
-        description: Конвертация файлов
+        description: File convert
 
-- Разработка:
+- Development:
     - VERT.sh:
         href: http://{{ HOMELAB_ADDRESS }}:3333
-        description: Конвертация файлов
+        description: File convert
