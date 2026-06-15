@@ -7,18 +7,31 @@
           view: monthly
           showTime: true
           timezone: {{ TIMEZONE }}
+    # - Docker:
+    #     #widget:
+    #     href: http://localhost/
+    #     description: Test container
+    #     server: my-server
+    #     container: homepage
+    #
 
 - Local services:
 
     - VERT.sh:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/vert.svg
-        href: http://{{ HOMELAB_ADDRESS }}:3333/
         description: File convert
+        href: http://{{ HOMELAB_ADDRESS }}:3333/
+        siteMonitor: http://{{ HOMELAB_ADDRESS }}:3333/
+        server: {{ DOCKER_NAME }}
+        container: vert
 
     - Grafana:
         icon: grafana.svg
-        href: http://{{ HOMELAB_ADDRESS }}:3000/
         description: Grafana on local server
+        href: http://{{ HOMELAB_ADDRESS }}:3000/
+        siteMonitor: http://{{ HOMELAB_ADDRESS }}:3000/
+        server: {{ DOCKER_NAME }}
+        container: {{ GRAFANA_NAME }}
         widget:
           type: grafana
           url: http://{{ HOMELAB_ADDRESS }}:3000
@@ -27,8 +40,11 @@
 
     - Portainer:
         icon: portainer.svg
-        href: http://{{ HOMELAB_ADDRESS }}:9000/
         description: Portainer on local server
+        href: http://{{ HOMELAB_ADDRESS }}:9000/
+        server: {{ DOCKER_NAME }}
+        siteMonitor: http://{{ HOMELAB_ADDRESS }}:9000/
+        container: {{ PORTAINER_NAME }}
         widget:
           type: portainer
           url: https://{{ HOMELAB_ADDRESS }}:9443
