@@ -1,0 +1,50 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Сервисы:
+
+    - VERT.sh:
+        icon: https://github.com/VERT-sh/VERT/blob/main/static/favicon.png?raw=true
+        href: http://{{ HOMELAB_ADDRESS }}:3333/
+        description: Конвертация файлов
+
+    - Grafana:
+        icon: grafana.svg
+        href: http://{{ HOMELAB_ADDRESS }}:3000/
+        description: Дашборд Grafana на сервере
+        widget:
+          type: grafana
+          url: http://{{ HOMELAB_ADDRESS }}:3000
+          username: {{ GRAFANA_USER }}
+          password: {{ GRAFANA_PASSWORD }}
+
+    - Portainer:
+        icon: portainer.svg
+        href: http://{{ HOMELAB_ADDRESS }}:9000/
+        description: Portainer
+        widget:
+          type: portainer
+          url: https://{{ HOMELAB_ADDRESS }}:9443
+          env: {{ PORTAINER_ENV }}
+          key: {{ PORTAINER_KEY }}
+
+    - Tailscale:
+        icon: tailscale.svg
+        href: https://remote.routerich.ru/devices
+        description: Remote RR
+        # widget:
+        #   type: tailscale
+        #   address: https://remote.routerich.ru/
+        #   deviceid: routerich
+        #   key: {{ TAILSCALE_KEY }}
+
+- Дизайн:
+    - VERT.sh:
+        href: http://{{ HOMELAB_ADDRESS }}:3333
+        description: Конвертация файлов
+
+- Разработка:
+    - VERT.sh:
+        href: http://{{ HOMELAB_ADDRESS }}:3333
+        description: Конвертация файлов

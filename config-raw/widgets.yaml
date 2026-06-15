@@ -1,0 +1,24 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/info-widgets/
+
+- logo:
+    href: http://{{ HOMELAB_ADDRESS }}:3723
+    target: _blank
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+
+- search:
+    provider: custom
+    url: https://ya.ru/search?text=
+    target: _blank
+    showSearchSuggestions: true
+
+- datetime:
+  text_size: xl
+  format:
+    timeStyle: short
+    hourCycle: h23

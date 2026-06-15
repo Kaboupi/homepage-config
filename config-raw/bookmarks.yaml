@@ -1,0 +1,37 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- AI:
+
+  - ChatGPT:
+    - abbr: GPT
+      href: https://chatgpt.com/
+
+  - Gemini:
+    - abbr: GMN
+      href: https://gemini.google.com/
+
+  - DeepSeek:
+    - abbr: DSK
+      href: https://deepseek.com/
+
+  - SYNTX:
+    - abbr: STX
+      href: https://syntx.ai/
+
+- Работа:
+
+  - Gmail:
+    - abbr: GML
+      href: https://gmail.com/
+
+- Развлечения:
+
+  - YouTube:
+    - abbr: YT
+      href: https://youtube.com/
+
+  - Яндекс.Музыка:
+    - abbr: ЯМ
+      href: https://music.yandex.ru/
