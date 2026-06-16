@@ -19,7 +19,7 @@ The stack consists of the following components:
   * **Grafana**: Visualizes the collected data via infrastructure dashboards.
 * **Development Utilities (`IT-Tools`)**: A collection of aggregated web-based
   tools for developers and system administrators.
-* **Deployment Automation (`vert.sh`)**: Scripting/automation tooling
+* **Deployment Automation (`VERT.sh`)**: Scripting/automation tooling
   utilized for environment verification and deployment lifecycles.
 
 ## Prerequisites
@@ -33,33 +33,18 @@ The stack consists of the following components:
 1. Clone the repository:
 
 ```bash
-   git clone git@github.com:Kaboupi/homepage-config.git
-   cd <repository-directory>
+git clone git@github.com:Kaboupi/homepage-config.git
+cd homepage-config
 ```
 
 2. Configure environment variables (copy the template and adjust system IPs/ports):
 
 ```bash
-   cp .env.example .env
+cp .env.example .env
 ```
 
 3. Initialize the stack
 
 ```bash
-  docker compose up -d
-```
-
-## Directory structure
-
-```bash
-|-- Makefile
-|-- README.md
-|-- config/      # rendered J2 configs, mounted to container
-|-- config-raw/  # editable J2 configs
-|-- docker-compose.yaml
-|-- gen/         # python utility for J2 rendering
-`-- monitoring/  # provisioning preset for grafana
-```
-
-```text
+docker compose up -d
 ```
