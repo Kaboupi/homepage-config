@@ -38,8 +38,8 @@
         widget:
           type: grafana
           url: http://{{ HOMELAB_ADDRESS }}:{{ GRAFANA_PORT }}
-          username: {{ GRAFANA_USER }}
-          password: {{ GRAFANA_PASSWORD }}
+          username: {{ GF_SECURITY_ADMIN_USER }}
+          password: {{ GF_SECURITY_ADMIN_PASSWORD }}
 
     - Portainer:
         icon: portainer.svg
@@ -75,14 +75,15 @@
 
 - Design:
 
-    - VERT.sh:
-        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/vert.svg
-        description: File convert
-        href: http://{{ HOMELAB_ADDRESS }}:{{ VERT_PORT }}/
-        siteMonitor: http://{{ HOMELAB_ADDRESS }}:{{ VERT_PORT }}/
-        server: {{ DOCKER_NAME }}
-        showStats: true
-        container: {{ VERT_NAME }}
+    - Figma:
+        icon: figma.svg
+        description: Figma
+        href: https://figma.com/
+
+    - Syntx.ai:
+        icon: figma.svg
+        description: AI-tool for picture generation
+        href: https://syntx.ai/
 
 - Development:
 

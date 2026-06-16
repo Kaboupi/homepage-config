@@ -5,8 +5,13 @@
 
 - logo:
     icon: arch-linux.svg
-    href: http://{{ HOMELAB_ADDRESS }}:{{ HOMEPAGE_PORT }}
+    href: http://github.com/Kaboupi/homepage-config
     target: _blank
+
+- greeting:
+    text_size: xl
+    href: http://github.com/Kaboupi/homepage-config
+    text: Welcome!
 
 - resources:
     cpu: true
