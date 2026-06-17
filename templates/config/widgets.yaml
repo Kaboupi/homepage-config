@@ -1,7 +1,7 @@
 ---
 
 - logo:
-    icon: nixos.svg
+    icon: https://cdn.jsdelivr.net/npm/@lobehub/icons-static-png@latest/dark/github.png
     href: http://github.com/Kaboupi/homepage-config
     target: _blank
 

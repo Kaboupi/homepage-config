@@ -15,5 +15,4 @@ scrape_configs:
     static_configs:
       - targets: ['{{ WATCHTOWER_HOSTNAME }}:8080']
     authorization:
-      # TODO: Replace with J2
       credentials: '{{ WATCHTOWER_KEY }}'

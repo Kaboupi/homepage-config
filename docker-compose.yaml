@@ -4,7 +4,7 @@ services:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: ${HOMEPAGE_NAME:-homepage}
     ports:
-      - ${HOMEPAGE_PORT:-3000}:3000
+      - ${HOMEPAGE_PORT:-3030}:3000
     volumes:
       - ./rendered/config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -15,7 +15,7 @@ services:
     container_name: ${VERT_NAME}
     image: ghcr.io/vert-sh/vert:latest
     ports:
-      - ${VERT_PORT:-3000}:80
+      - ${VERT_PORT:-3333}:80
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     restart: unless-stopped
