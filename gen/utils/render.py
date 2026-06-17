@@ -15,6 +15,20 @@ def render_templates(
     out_dir: str | Path,
     log_level: str = Settings.LOG_LEVEL,
 ):
+    """Recursively processes a directory of Jinja2 templates and renders them.
+
+    Loads environment variables into the context and interpolates them into
+    the discovered templates, recreating the target directory structure.
+
+    Args:
+        raw_dir (str | Path): Path to the folder containing source templates.
+        out_dir (str | Path): Path to the folder where rendered files will be saved.
+        log_level (str, optional): The log level for this rendering execution.
+            Defaults to Settings.LOG_LEVEL.
+
+    Raises:
+        SystemExit: If the source `raw_dir` directory does not exist.
+    """
     logger.remove()
     logger.add(sys.stderr, level=log_level)
 

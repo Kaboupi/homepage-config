@@ -1,14 +1,14 @@
-target-version = "py311"
+target-version = "py312"
 
 line-length = 100
 
 exclude = [
-    ".git",
     ".cache",
-    "venv",
+    ".git",
     ".pypy_cache",
     ".ruff_cache",
     "__pypackages__",
+    "venv",
 ]
 
 [lint]
@@ -32,14 +32,14 @@ fixable = ["ALL"]
 unfixable = []
 
 [lint.isort]
-section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
 known-first-party = ["gen"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
 
 [lint.flake8-bugbear]
 extend-immutable-calls = ["fastapi.Depends", "fastapi.Query", "argparse.ArgumentParser"]
 
 [format]
-quote-style = "double"
 indent-style = "space"
-skip-magic-trailing-comma = false
 line-ending = "auto"
+quote-style = "double"
+skip-magic-trailing-comma = false
