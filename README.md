@@ -5,7 +5,7 @@ This repository contains the configuration files required to deploy a
 centralized homepage alongside infrastructure management, monitoring,
 and utility tools.
 
-![Sample image](https://github.com/user-attachments/assets/ff7fe480-83e3-4d43-90ed-73d2d3e9d5c5)
+![Homepage example](./.github/assets/homepage-example.png)
 
 ## Architecture & Services
 
