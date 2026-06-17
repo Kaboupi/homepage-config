@@ -1,16 +1,35 @@
 from pathlib import Path
+import sys
 
-from utils import render_templates, Settings
+from loguru import logger
+
+from config.settings import Settings
+from utils import (
+    parse_arguments,
+    render_templates,
+)
+
+args = parse_arguments()
+log_level = args.log_level
+
+logger.remove()
+logger.add(sys.stderr, level=log_level)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-raw_config_dir = BASE_DIR / Settings.TEMPLATE_DIR / Settings.CONFIG_DIR
-out_config_dir = BASE_DIR / Settings.RENDERED_DIR / Settings.CONFIG_DIR
-
-raw_monitoring_dir = BASE_DIR / Settings.TEMPLATE_DIR / Settings.MONITORING_DIR
-out_monitoring_dir = BASE_DIR / Settings.RENDERED_DIR / Settings.MONITORING_DIR
-
-
 if __name__ == "__main__":
-    render_templates(raw_dir=raw_config_dir, out_dir=out_config_dir)
-    render_templates(raw_dir=raw_monitoring_dir, out_dir=out_monitoring_dir)
+    logger.info(f"Current LOG_LEVEL: {log_level}")
+    logger.info(
+        "Can be changed via "
+        "`make run LOG_LEVEL=["
+        f"{'|'.join(Settings.LOG_LEVEL_CHOICES)}]`"
+    )
+
+    for dir_to_render in Settings.DIRS_TO_RENDER:
+
+        raw_dir = BASE_DIR / Settings.TEMPLATE_DIR / dir_to_render
+        logger.debug(f"raw_dir: `{raw_dir}`")
+        out_dir = BASE_DIR / Settings.RENDERED_DIR / dir_to_render
+        logger.debug(f"out_dir: `{out_dir}`")
+
+        render_templates(raw_dir=raw_dir, out_dir=out_dir, log_level=log_level)

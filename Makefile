@@ -4,6 +4,8 @@ VENV_PYTHON = $(VENV)/bin/$(PYTHON_VERSION)
 
 .DEFAULT_GOAL := help
 
+LOG_LEVEL ?= INFO
+
 .PHONY: run venv clean help
 
 help:
@@ -27,10 +29,10 @@ $(VENV)/.infrastructure_done: gen/requirements.txt
 	@echo "=> Finish"
 
 run: venv
+	@echo "=> Start config gen"
+	$(VENV_PYTHON) gen/main.py --log-level $(LOG_LEVEL)
 	@echo "=> Start docker containers"
 	docker compose up -d
-	@echo "=> Start config gen"
-	$(VENV_PYTHON) gen/main.py
 	@echo "=> Success!"
 
 stop:

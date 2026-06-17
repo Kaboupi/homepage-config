@@ -6,16 +6,19 @@ from dotenv import load_dotenv
 from jinja2 import Environment, BaseLoader, TemplateError
 from loguru import logger
 
-load_dotenv(override=True)
+from config.settings import Settings
 
-logger.remove()
-logger.add(sys.stderr, level=os.environ.get("LOG_LEVEL", "INFO"))
+load_dotenv(override=True)
 
 
 def render_templates(
     raw_dir: str | Path,
     out_dir: str | Path,
+    log_level: str = Settings.LOG_LEVEL,
 ):
+    logger.remove()
+    logger.add(sys.stderr, level=log_level)
+
     if not raw_dir.exists():
         logger.error(f"Directory `{raw_dir}` not found!")
         sys.exit(1)
@@ -32,10 +35,10 @@ def render_templates(
         relative_path = raw_file_path.relative_to(raw_dir)
         output_file_path = out_dir / relative_path
 
-        logger.debug(f"Render: {relative_path} -> ", end="")
+        logger.debug(f"Render: {relative_path} -> ")
 
         try:
-            with open(raw_file_path, "r", encoding="utf-8") as f:
+            with open(raw_file_path, encoding="utf-8") as f:
                 template_content = f.read()
 
             template = jinja_env.from_string(template_content)
@@ -46,11 +49,9 @@ def render_templates(
             with open(output_file_path, "w", encoding="utf-8") as f:
                 f.write(rendered_content)
 
-            logger.debug("Success")
-
         except TemplateError as e:
             logger.error(f"Jinja2 error encountered: ({e})")
         except Exception as e:
             logger.exception(f"System error encountered: ({e})")
 
-    logger.success("Render complete!")
+    logger.success("Render: Complete!")
