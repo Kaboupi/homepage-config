@@ -1,3 +1,8 @@
+![Homepage](https://img.shields.io/badge/-HOMEPAGE-0F8DBC?style=for-the-badge&logo=homepage&logoColor=white)
+![Grafana](https://img.shields.io/badge/-GRAFANA-F46800?style=for-the-badge&logo=grafana&logoColor=white)
+![Portainer](https://img.shields.io/badge/-PORTAINER-344054?style=for-the-badge&logo=portainer&logoColor=white)
+![Watchtower](https://img.shields.io/badge/-WATCHTOWER-416271?style=for-the-badge&logo=watchtower&logoColor=white)
+
 # Homelab Infrastructure Dashboard
 
 A self-hosted homelab environment orchestrated via Docker Compose.
