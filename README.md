@@ -39,8 +39,8 @@ The stack consists of the following components:
 1. Clone the repository:
 
 ```bash
-git clone git@github.com:Kaboupi/homepage-config.git
-cd homepage-config
+git clone git@github.com:Kaboupi/easy-homepage.git
+cd easy-homepage
 ```
 
 2. Configure environment variables (copy the template
