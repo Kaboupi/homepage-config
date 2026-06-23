@@ -17,7 +17,7 @@
         statusStyle: dot
         widget:
           type: watchtower
-          url: http://{{ HOMELAB_ADDRESS }}:{{ WATCHTOWER_PORT }}/
+          url: http://{{ WATCHTOWER_HOSTNAME }}:8080/
           key: {{ WATCHTOWER_KEY }}
 
     - Calendar:
@@ -34,7 +34,7 @@
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/vert.svg
         description: File convert
         href: http://{{ HOMELAB_ADDRESS }}:{{ VERT_PORT }}/
-        siteMonitor: http://{{ HOMELAB_ADDRESS }}:{{ VERT_PORT }}/
+        siteMonitor: http://{{ VERT_HOSTNAME }}:80/
         server: {{ DOCKER_NAME }}
         showStats: true
         container: {{ VERT_NAME }}
@@ -43,7 +43,7 @@
         icon: it-tools.svg
         description: Most used IT-Tools
         href: http://{{ HOMELAB_ADDRESS }}:{{ IT_TOOLS_PORT }}/
-        siteMonitor: http://{{ HOMELAB_ADDRESS }}:{{ IT_TOOLS_PORT }}/
+        siteMonitor: http://{{ IT_TOOLS_HOSTNAME }}:80/
         server: {{ DOCKER_NAME }}
         showStats: true
         container: {{ IT_TOOLS_NAME }}
@@ -52,12 +52,12 @@
         icon: grafana.svg
         description: Grafana on local server
         href: http://{{ HOMELAB_ADDRESS }}:{{ GRAFANA_PORT }}/
-        siteMonitor: http://{{ HOMELAB_ADDRESS }}:{{ GRAFANA_PORT }}/
+        siteMonitor: http://{{ GRAFANA_HOSTNAME }}:3000/
         server: {{ DOCKER_NAME }}
         container: {{ GRAFANA_NAME }}
         widget:
           type: grafana
-          url: http://{{ HOMELAB_ADDRESS }}:{{ GRAFANA_PORT }}
+          url: http://{{ GRAFANA_HOSTNAME }}:3000
           username: {{ GF_SECURITY_ADMIN_USER }}
           password: {{ GF_SECURITY_ADMIN_PASSWORD }}
 
@@ -65,12 +65,12 @@
         icon: portainer.svg
         description: Portainer on local server
         href: http://{{ HOMELAB_ADDRESS }}:{{ PORTAINER_PORT_UI }}/
-        siteMonitor: http://{{ HOMELAB_ADDRESS }}:{{ PORTAINER_PORT_UI }}/
+        siteMonitor: http://{{ PORTAINER_HOSTNAME }}:9000/
         server: {{ DOCKER_NAME }}
         container: {{ PORTAINER_NAME }}
         widget:
           type: portainer
-          url: https://{{ HOMELAB_ADDRESS }}:{{ PORTAINER_PORT_API }}
+          url: https://{{ PORTAINER_HOSTNAME }}:9443
           env: {{ PORTAINER_ENV }}
           key: {{ PORTAINER_KEY }}
 
